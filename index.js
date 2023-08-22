@@ -3,12 +3,10 @@ let min = 0;
 let max = 3;
 let contadorJugador = 0;
 let contadorComputadora = 0;
-let vuelta = 0;
+let vuelta = 1;
 let manoComputadora = "";
 let resultado = "";
 let partida = "";
-let gameOver = false;
-
 function generarManoComputadora(min, max) {
     let opcionesComputadora =  ["piedra", "papel", "tijera"];
     min = Math.ceil(min);
@@ -56,7 +54,10 @@ function determinarResultado(){
     console.log(partida)
 }
 function cuatroVueltas(){
-    vuelta = 0;
+    vuelta = 1;
+    contadorComputadora = 0;
+    contadorJugador = 0;
+    console.log("Inicio de Partida");
     for (let i = 0; i <= 3; i++){
         jugarMano(manoJugador, manoComputadora);
         vuelta = vuelta +1;
@@ -64,11 +65,15 @@ function cuatroVueltas(){
     determinarResultado();
 }
 function elMejorDeTres (){
-    vuelta = 0;
+    vuelta = 1;
+    contadorComputadora = 0;
+    contadorJugador = 0;
+    console.log("Inicio de Partida");
+    let gameOver = false;
     while (gameOver == false){
         jugarMano(manoJugador, manoComputadora);
         vuelta = vuelta +1
-        if (vuelta === 3){
+        if (vuelta === 4 || contadorJugador >= 2 || contadorComputadora >= 2){
             gameOver = true;
         }
     }
