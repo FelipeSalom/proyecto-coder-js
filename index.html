@@ -8,8 +8,17 @@
 </head>
 <body>
     <main>
-        <button onclick="cuatroVueltas()">Cuatro Rondas</button>
-        <button onclick="elMejorDeTres()">Mejor de tres</button>
+        <button onclick="jugarMano(value)" id="0" value="0">piedra</button>
+        <button onclick="jugarMano(value)" id="1" value="1">tijera</button>
+        <button onclick="jugarMano(value)" id="2" value="2">papel</button>
+        <br>
+        <br>
+        <button onclick="separarVictorias()">Victorias</button>
+        <button onclick="separarEmpates()">Empates</button>
+        <button onclick="separarPerdidas()">Perdidas</button>
+        <br>
+        <br>
+        <button onclick="limpiarHistorial()">Borrar Historial</button>
     </main>
 </body>
 </html>
